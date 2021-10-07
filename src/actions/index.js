@@ -1,10 +1,7 @@
-export const getUsers = () => ({
-  type: 'GET_USER_REQUEST',
-});
-
 export const Types = {
   GET_USERS_REQUEST: 'GET_USERS_REQUEST',
   GET_USERS_SUCCESS: 'GET_USERS_SUCCESS',
+  GET_USERS_FAIL: 'GET_USERS_FAIL',
 };
 
 export const getUsersRequest = () => ({
@@ -13,10 +10,10 @@ export const getUsersRequest = () => ({
 
 export const getUsersSuccess = (users) => ({
   type: Types.GET_USERS_SUCCESS,
-  payload: { users },
+  users,
 });
 
 export const getUsersFail = (error) => ({
-  type: 'GET_USER_FAIL',
+  type: Types.GET_USERS_FAIL,
   message: error.message,
 });
